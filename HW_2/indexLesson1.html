@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашнее задание</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="indexLesson1.html"><img class="navbar__logo" src="img/logo.png" alt="logo"></a>
+            <div class="navbar__menu">
+                <ul class="navbar__unit">
+                    <a class="navbar__link" href="indexLesson1.html">
+                        <li class="navbar__list">Урок_1</li>
+                    </a>
+                    <a class="navbar__link" href="lesson_2.html">
+                        <li class="navbar__list">Урок_2</li>
+                    </a>
+                    <a class="navbar__link" href="#">
+                        <li class="navbar__list">Урок_3</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h1 class="main__heading">Урок 1. Основы языка JavaScript</h1>
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                1. Задать температуру в градусах по Цельсию. Вывести в alert соответствующую температуру в градусах по Фаренгейту. <br> Подсказка: расчёт идёт по формуле: Tf = (9 / 5) * Tc + 32, где Tf – температура по Фаренгейту, Tc – температура по Цельсию
+            </p> <br> <hr>
+            <p class="main__code">
+                var tC = +prompt("Введите температуру по Цельсию:"); <br>
+                var tF = (9 / 5) * tC + 32;<br>
+                alert("Температура по Фаренгейту: " + tF);<br>
+            </p> <hr>
+            <button onclick="click_1()"  class="main__button" >Выполнить код</button>
+            <script>
+                function click_1() {
+                    var tC = +prompt("Введите температуру по Цельсию:");
+                    var tF = (9 / 5) * tC + 32;
+                    alert("Температура по Фаренгейту: " + tF);
+                }
+            </script>
+            
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                2. Работа с переменными. Обмен значений без третьей переменной.
+            </p> <br> <hr>
+            <p class="main__code">
+                var numA = 5; <br>
+                var numB = 8; <br><br>
+                
+                numA = numA + numB; <br>
+                numB = numA - numB; <br>
+                numA = numA - numB; <br><br>
+                
+                alert(`Значение numA теперь равно ${numA}`); <br>
+                alert(`Значение numB теперь равно ${numB}`);
+                
+            </p> <hr>
+            <button onclick="click_2()" class="main__button">Выполнить код</button>
+            <script>
+                function click_2() {
+                    var numA = 5; 
+                    var numB = 8;
+                
+                numA = numA + numB; 
+                numB = numA - numB; 
+                numA = numA - numB;
+                
+                alert(`Значение numA теперь равно ${numA}`);
+                alert(`Значение numB теперь равно ${numB}`);
+                
+                }
+            </script>
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                3. Объявить две переменные: admin и name. Записать в name строку "Василий"; <br> Скопировать значение из name в admin. Вывести admin (должно вывести «Василий»).
+            </p> <br> <hr>
+            <p class="main__code">
+                var name = "Василий"; <br>
+                var admin = name; <br>
+                alert(`Admin теперь ${admin}`);
+            </p> <hr>
+            <button onclick="click_3()" class="main__button">Выполнить код</button>
+            <script>
+                function click_3(){
+                    var name = "Василий";
+                    var admin = name;
+                    alert(`Admin теперь ${admin}`);
+                }
+            </script>
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                4. *Чему будет равно JS-выражение 1000 + "108"/
+            </p> <br> <hr>
+            <p class="main__code">
+                var a = 1000; <br>  
+                var b = "108"; <br>
+                var c = a+b; <br>   
+                alert(`Конкатенация числа со строкой. Произошло неявное преобразование числа 1000 в строку и с = ${c}`);
+            </p> <hr>
+            <button onclick="click_4()" class="main__button">Выполнить код</button>
+            <script>
+                function click_4() {
+                    var a = 1000;  
+                    var b = "108";
+                    var c = a+b;   
+                alert(`Конкатенация числа со строкой. Произошло неявное преобразование числа 1000 в строку и с = ${c}`);
+                }
+            </script>
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+               5. *Самостоятельно разобраться с атрибутами тега script (async и defer) <br> <br>
+            </p> <hr>
+            <p class="main__smallDesc">
+               <b>async</b> - загрузка скрипта идет параллельно с загрузкой страницы. После того как скрипт загрузился, HTML парсинг страницы приостанавливается, выполняется скрипт JS, и после того как скрипт выполнен, продолжается загрузка страницы. Скрипты с атрибутом async не зависят друг от друга, порядок загрузки всегда разный и запускается тот, который быстрее всех загрузился. <br>
+               <b>defer</b> - загрузка скрипта идет параллельно и парсинг страницы не блокируется. Скрипт начнет выполнятся только после того как все теги html будут загружены на страницу. Для максимальной производительности, целесообразно данный скрипт подключать в начале тега head. Скрипты выполняются строго в том порядке, в котором они расположены.
+             </p> <hr>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footerInfo">
+            <p class="footerInfo__content">&copy; Alyona Belokonskaya</p>
+            <a href="indexLesson1.html"><img src="img/logo.png" alt="logo" class="footerInfo__logo"></a>
+        </div>
+    </footer>
+
+    <!--  <script src="script.js"></script> -->
+</body>
+
+</html>
