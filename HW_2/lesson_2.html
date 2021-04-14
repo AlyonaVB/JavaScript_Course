@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашнее задание</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="indexLesson1.html"><img class="navbar__logo" src="img/logo.png" alt="logo"></a>
+            <div class="navbar__menu">
+                <ul class="navbar__unit">
+                    <a class="navbar__link" href="indexLesson1.html">
+                        <li class="navbar__list">Урок_1</li>
+                    </a>
+                    <a class="navbar__link" href="lesson_2.html">
+                        <li class="navbar__list">Урок_2</li>
+                    </a>
+                    <a class="navbar__link" href="#">
+                        <li class="navbar__list">Урок_3</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h1 class="main__heading">Урок 2. Основные операторы JavaScript</h1>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                1. Дан код: <br> Почему код даёт именно такие результаты?
+            </p> <br>
+            <hr>
+            <p class="main__code">
+                var a = 1, b = 1, c, d; <br>
+                c = ++a; alert(c); // 2 <br>
+                d = b++; alert(d); // 1 <br>
+                c = (2+ ++a); alert(c); // 5 <br>
+                d = (2+ b++); alert(d); // 4 <br>
+                alert(a); // 3 <br>
+                alert(b); // 3
+            </p>
+            <hr>
+            <button onclick="click_1()" class="main__button">Выполнить код</button>
+            <script>
+                function click_1() {
+                    var a = 1,
+                        b = 1,
+                        c, d;
+                    c = ++a;
+                    alert(`Префиксный инкремент увеличивает на +1 переменную а=1, поэтому 1+1 = c = ${c}`); // 2
+                    d = b++;
+                    alert(
+                        `Постфисный инкремент, сначала присваивает первоначальное значение b=1, поэтому и d = ${d}`
+                    ); // 1
+                    c = (2 + ++a);
+                    alert(
+                        `переменная "a" у нас уже равна 2, и с префиксным инкрементом становится равна 3, 2+3 = c = ${c}`
+                    ); // 5
+                    d = (2 + b++);
+                    alert(`После постфиксного инкремента b стало равно 2, 2+2 = d = ${d}`); // 4
+                    alert(`Префиксный инкремент 2 раза увеличил переменную а=1, поэтому a = ${a}`); // 3
+                    alert(`Последний постфиксный инкремент увеличил b на +1, 2+1 = b = ${b}`); // 3
+                }
+            </script>
+
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                2. Чему будет равен x в примере ниже?
+            </p> <br>
+            <hr>
+            <p class="main__code">
+                var a = 2; <br>
+                var x = 1 + (a *= 2);
+            </p>
+            <hr>
+            <button onclick="click_2()" class="main__button">Выполнить код</button>
+            <script>
+                function click_2() {
+                    var a = 2;
+                    var x = 1 + (a *= 2);
+                    alert(`Переменная х равна ${x}`);
+                }
+            </script>
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                3. Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем
+                написать скрипт, который работает по следующему принципу: <br> - если a и b положительные, вывести их
+                разность;<br> - если а и b отрицательные, вывести их произведение;<br> - если а и b разных знаков,
+                вывести их сумму; <br> - ноль можно считать положительным числом.
+            </p> <br>
+            <hr>
+            <p class="main__code">
+
+            </p>
+            <hr>
+            <button onclick="click_3()" class="main__button">Выполнить код</button>
+            <script>
+                function click_3() {
+                    var a = +prompt("Введите целое число");
+                    var b = +prompt("Введите еще одно целое число");
+                    if (a >= 0 && b >= 0) {
+                        alert("Числа положительные. Разность = " + (a - b));
+                    }
+                    if (a <= 0 && b <= 0) {
+                        alert("Числа отрицательные. Произведение = " + (a * b));
+                    }
+                    if (a >= 0 && b <= 0 || a <= 0 && b >= 0) {
+                        c = a + b;
+                        alert("Числа разных знаков. Сумма = " + (a + b));
+                    }
+                }
+            </script>
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                4. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод
+                чисел от a до 15.
+            </p> <br>
+            <hr>
+            <p class="main__code">
+
+            </p>
+            <hr>
+            <button onclick="click_4()" class="main__button">Выполнить код</button>
+            <script>
+                function click_4() {
+                    var a = +prompt("Напишите любое число от 1 до 15");
+                    switch (a) {
+                        case 1:
+                            alert("number 1");
+                        case 2:
+                            alert("number 2");
+                        case 3:
+                            alert("number 3");
+                        case 4:
+                            alert("number 4");
+                        case 5:
+                            alert("number 5");
+                        case 6:
+                            alert("number 6");
+                        case 7:
+                            alert("number 7");
+                        case 8:
+                            alert("number 8");
+                        case 9:
+                            alert("number 9");
+                        case 10:
+                            alert("number 10");
+                        case 11:
+                            alert("number 11");
+                        case 12:
+                            alert("number 12");
+                        case 13:
+                            alert("number 13");
+                        case 14:
+                            alert("number 14");
+                        case 15:
+                            alert("Финиш! Number 15");
+                            break;
+                        default:
+                            alert("Введены некорректные данные.")
+                    }
+                }
+            </script>
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                4.1*. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15. <br> Решить с помощью рекурсии.
+            </p> <br>
+            <hr>
+            <p class="main__code">
+                function clickRec(n) { <br>
+                    return n ? clickRec(n-1) + n.toString() : ""; <br>
+                } <br>
+                console.log(clickRec(15));
+            </p>
+            <hr>
+            <button onclick="clickRec()" class="main__button">Выполнить код</button>
+            <script>
+                function clickRec(n) {
+                    return n ? clickRec(n-1) + n.toString() : "";
+                }
+                console.log(clickRec(15));
+            </script>
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно
+                использовать оператор return.
+            </p> <br>
+            <hr>
+            <p class="main__code">
+
+            </p>
+            <hr>
+            <button onclick="click_5()" class="main__button">Выполнить код</button>
+            <script>
+                function click_5() {
+                    // сложение
+                    function sum(numC, numD) {
+                        return numC + numD;
+                    }
+                    let sumResult = sum(5, 6);
+                    alert('Сумма чисел равна ' + sumResult);
+
+                    // вычитание
+                    function min(numC, numD) {
+                        return numC - numD;
+                    }
+                    let minResult = min(5, 6);
+                    alert('Разность чисел равна ' + minResult);
+
+                    // деление
+                    function div(numC, numD) {
+                        return numC / numD;
+                    }
+                    let divResult = div(12, 3);
+                    alert('Деление чисел равно ' + divResult);
+
+                    // умножение
+                    function mul(numC, numD) {
+                        return numC * numD;
+                    }
+                    let mulResult = mul(3, 3);
+                    alert('Произведение чисел равно ' + mulResult);
+                }
+            </script>
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1,
+                arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного
+                значения операции выполнить одну из арифметических операций (использовать функции из пункта 5) и вернуть
+                полученное значение (использовать switch).</p> <br>
+            <hr>
+            <p class="main__code">
+                function mathOperation(arg1, arg2, operation) { <br>
+                switch (operation) { <br>
+                case "+": <br>
+                return sum(arg1, arg2); <br>
+                case "-": <br>
+                return min(arg1, arg2); <br>
+                case "/": <br>
+                return div(arg1, arg2);
+                case "*": <br>
+                return mul(arg1, arg2); <br>
+                default: <br>
+                throw new Error("Операция " + operation + " не предусмотрена"); <br>
+                } <br>
+                }
+            </p>
+            <hr>
+            <button onclick="common()" class="main__button">Выполнить код</button>
+            <script>
+                function common() {
+                    function sum(numC, numD) {
+                        return numC + numD;
+                    }
+
+                    function min(numC, numD) {
+                        return numC - numD;
+                    }
+
+                    function div(numC, numD) {
+                        return numC / numD;
+                    }
+
+                    function mul(numC, numD) {
+                        return numC * numD;
+                    }
+
+                    function mathOperation(arg1, arg2, operation) {
+                        switch (operation) {
+                            case "+":
+                                return sum(arg1, arg2);
+                            case "-":
+                                return min(arg1, arg2);
+                            case "/":
+                                return div(arg1, arg2);
+                            case "*":
+                                return mul(arg1, arg2);
+                            default:
+                                throw new Error("Операция " + operation + " не предусмотрена");
+                        }
+                    }
+
+                    alert(mathOperation(5, 3, "+"));
+                    alert(mathOperation(5, 3, "-"));
+                    alert(mathOperation(5, 3, "/"));
+                    alert(mathOperation(5, 3, "*"));
+                    console.log(mathOperation(5, 3, "lorem"));
+                }
+            </script>
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                7. *Сравнить null и 0. Попробуйте объяснить результат.
+            </p> <br>
+            <hr>
+            <p class="main__code">
+                function compare(x = 0, y = null) { <br>
+                alert((x >= y) + " 0 - это число, а null - используется как \"заглушка\", когда значение еще не<br>
+                задано. При операции >= null преобразовывается в 0, поэтому - true");<br>
+                alert((x === y) + " строгое неравенство, разные типа у переменных - false");<br>
+                alert((x != y) + " Не равны, т.к \"x\" и \"y\" разные по типу - false");<br>
+                }
+            </p>
+            <hr>
+            <button onclick="compare()" class="main__button">Выполнить код</button>
+            <script>
+                function compare(x = 0, y = null) {
+                    alert((x >= y) +
+                        " 0 - это число, а null - используется как \"заглушка\", когда значение еще не задано. При операции >= null преобразовывается в 0, поэтому - true"
+                        );
+                    alert((x === y) + " строгое неравенство, разные типа у переменных - false");
+                    alert((x != y) + " Не равны, т.к \"x\" и \"y\" разные по типу - false");
+                }
+            </script>
+
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                8. *С помощью рекурсии организовать функцию возведения числа в степень. <br> Формат: function power(val, pow), где val – заданное число, pow – степень.
+            </p> <br>
+            <hr>
+            <p class="main__code">
+                function power(val, pow) { <br>
+                    if (pow == 1) { /*задаем условие для выхода из рекурсии. Любое число возведенное в степень 1, вернет само число*/ <br>
+                        return val; <br>
+                    } <br>
+                    if (pow == 0) { /*продолжения условия. число возведенное в степень 0, вернет 1*/ <br>
+                        return 1; <br>
+                    } <br>
+                    return val * power(val, pow - 1); <br>
+                } <br>
+                console.log(power(3,2));
+            </p>
+            <hr>
+            <button onclick="power()" class="main__button">Выполнить код</button>
+            <script>
+                function power(val, pow) {
+                    if (pow == 1) {
+                        /*задаем условие для выхода из рекурсии. Любое число возведенное в степень 1, вернет само число*/
+                        return val;
+                    }
+                    if (pow == 0) { //продолжения условия. число возведенное в степень 0, вернет 1
+                        return 1;
+                    }
+                    return val * power(val, pow - 1); // формула рекурсии придумывается
+                }
+                console.log(power(3,2));
+            </script>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footerInfo">
+            <p class="footerInfo__content">&copy; Alyona Belokonskaya</p>
+            <a href="indexLesson1.html"><img src="img/logo.png" alt="logo" class="footerInfo__logo"></a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
