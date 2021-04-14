@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашнее задание. Циклы, массивы, структуры данных</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="indexLesson1.html"><img class="navbar__logo" src="img/logo.png" alt="logo"></a>
+            <div class="navbar__menu">
+                <ul class="navbar__unit">
+                    <a class="navbar__link" href="indexLesson1.html">
+                        <li class="navbar__list">Урок_1</li>
+                    </a>
+                    <a class="navbar__link" href="lesson_2.html">
+                        <li class="navbar__list">Урок_2</li>
+                    </a>
+                    <a class="navbar__link" href="lesson_3.html">
+                        <li class="navbar__list">Урок_3</li>
+                    </a>
+                    <a class="navbar__link" href="#">
+                        <li class="navbar__list">Урок_4</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <h1 class="main__heading">Урок 3. Циклы, массивы, структуры данных</h1>
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
+            </p> <br>
+            <hr>
+            <p class="main__code">
+                function simpleNum() { <br>
+                var num = 2; <br>
+                while (num <= 100) { <br>
+                    if (simple(num)) { <br>
+                    console.log(num + " "); <br>
+                    } <br>
+                    num++; <br>
+                    } <br>
+
+                    function simple(num) { <br>
+                    var i = 2 <br>;
+                    while (i < num) { <br>
+                        if (num % i == 0) { <br>
+                        return false; <br>
+                        } <br>
+                        i++; <br>
+                        } <br>
+                        return true; <br>
+                        } <br>
+                        }
+            </p>
+            <hr>
+            <button onclick="simpleNum()" class="main__button">Вывод в консоль</button>
+            <script>
+                function simpleNum() {
+                    var num = 2;
+                    while (num <= 100) {
+                        if (simple(num)) {
+                            console.log(num + " ");
+                        }
+                        num++;
+                    }
+
+                    function simple(num) {
+                        var i = 2;
+                        while (i < num) {
+                            if (num % i == 0) { //
+                                return false;
+                            }
+                            i++;
+                        }
+                        return true;
+                    }
+                }
+            </script>
+
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                2. С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть сущность корзины.
+                Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.
+                3. Товары в корзине хранятся в массиве. Задачи:
+a) Организовать такой массив для хранения товаров в корзине;
+b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
+            </p> <br>
+            <hr>
+            <p class="main__code">
+                var basket = [ <br>
+                ["Обои", 523], <br>
+                ["Краска", 427], <br>
+                ["Плитка", 259], <br>
+                ["Грунтовка", 278] <br>
+            ]; <br>
+
+            function countBasketPrice(mas) { <br>
+                var money = 0; <br>
+                var i; <br>
+                for (i = 0; i < 4; i++) { <br>
+                    console.log("Цена: " + mas[i][0] + " = " + mas[i] <br>[1] + " руб."); <br>
+                    money += mas[i][1]; <br>
+                } <br>
+                console.log("Итоговая стоимость вашей корзины = " + money + " руб."); <br>
+            } <br>
+            countBasketPrice(basket);
+            </p>
+            <hr>
+            <button onclick="countBasket()" class="main__button">Вывод в консоль</button>
+            <script>
+                function countBasket() {
+                    var basket = [
+                        ["Обои", 523],
+                        ["Краска", 427],
+                        ["Плитка", 259],
+                        ["Грунтовка", 278]
+                    ];
+
+                    function countBasketPrice(mas) {
+                        var money = 0;
+                        var i;
+                        for (i = 0; i < 4; i++) {
+                            console.log("Цена: " + mas[i][0] + " = " + mas[i][1] + " руб.");
+                            money += mas[i][1];
+                        }
+                        console.log("Итоговая стоимость вашей корзины = " + money + " руб.");
+                    }
+                    countBasketPrice(basket);
+                }
+            </script>
+
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                4.*Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. Выглядеть это должно так: for(…){// здесь пусто}
+            </p> <br>
+            <hr>
+            <p class="main__code">
+                for (var i = 0; i < 9; i++, console.log(i)) {}
+            </p>
+            <hr>
+            <button onclick="forCount()" class="main__button">Вывод в консоль</button>
+            <script>
+                function forCount() {
+                    for (var i = 0; i < 9; i++, console.log(i)) {}
+                }
+            </script>
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                5. *Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5:
+            </p> <br>
+            <hr>
+            <p class="main__code">
+                var stringX = " "; <br>
+                for (var i = 0; i < 20; i++) {  <br>
+                    stringX += "x";  <br>
+                    console.log(stringX); <br>
+                }
+            </p>
+            <hr>
+            <button onclick="makePyramid()" class="main__button">Вывод в консоль</button>
+            <script>
+                function makePyramid() {
+                    var stringX = " ";
+                for (var i = 0; i < 20; i++) { 
+                    stringX += "x"; 
+                    console.log(stringX);
+                }
+                }
+            </script>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footerInfo">
+            <p class="footerInfo__content">&copy; Alyona Belokonskaya</p>
+            <a href="indexLesson1.html"><img src="img/logo.png" alt="logo" class="footerInfo__logo"></a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
