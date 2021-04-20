@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашнее задание. Объекты в JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="indexLesson1.html"><img class="navbar__logo" src="img/logo.png" alt="logo"></a>
+            <div class="navbar__menu">
+                <ul class="navbar__unit">
+                    <a class="navbar__link" href="indexLesson1.html">
+                        <li class="navbar__list">Урок_1</li>
+                    </a>
+                    <a class="navbar__link" href="lesson_2.html">
+                        <li class="navbar__list">Урок_2</li>
+                    </a>
+                    <a class="navbar__link" href="lesson_3.html">
+                        <li class="navbar__list">Урок_3</li>
+                    </a>
+                    <a class="navbar__link" href="lesson_4.html">
+                        <li class="navbar__list">Урок_4</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h1 class="main__heading">Урок 4. Объекты в JavaScript</h1>
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                1. Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999, мы должны
+                получить на выходе объект, в котором в соответствующих свойствах описаны единицы, десятки и сотни.
+                Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}.
+                Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть
+                пустой объект.
+            </p> <br>
+            <hr>
+            <p class="main__code">
+                var x = { <br>
+                    hundreds: 0, <br>
+                    dozens: 0, <br>
+                    units: 0 <br>
+                }; <br>
+
+                function numberToObject(number) { <br>
+                    if (number < 0 || number > 999) { <br>
+                        console.log( <br>
+                            "Вы ввели не корректное число. Пожалуйста введите число в диапазоне от 0 до 999.") <br>
+                    } else { <br>
+                        x.hundreds = Math.floor(number / 100); <br>
+                        x.dozens = Math.floor((number % 100) / 10); <br>
+                        x.units = number % 10; <br>
+                        return x; <br>
+                    }
+                }
+                var a = +prompt("Введите число от 0 до 999"); <br>
+                console.log(numberToObject(a)); <br>
+                console.log("Сотни: " + x.hundreds + "</br> десятки: " + x.dozens + "</br> единицы: " + x.units); <br>
+            </p>
+            <hr>
+            <button onclick="numberToObj()" class="main__button">Вывод в консоль</button>
+            <script>
+                function numberToObj() {
+                    var x = {
+                        hundreds: 0,
+                        dozens: 0,
+                        units: 0
+                    };
+
+                    function numberToObject(number) {
+                        if (number < 0 || number > 999) {
+                            console.log(
+                                "Вы ввели не корректное число. Пожалуйста введите число в диапазоне от 0 до 999.")
+                        } else {
+                            x.hundreds = Math.floor(number / 100);
+                            x.dozens = Math.floor((number % 100) / 10);
+                            x.units = number % 10;
+                            return x;
+                        }
+                    }
+                    var a = +prompt("Введите число от 0 до 999");
+                    console.log(numberToObject(a));
+                    console.log("Сотни: " + x.hundreds + "\nДесятки: " + x.dozens + "\nЕдиницы: " + x.units);
+                }
+            </script>
+
+        </section >
+        
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                2. Для игры, реализованной на уроке, добавить возможность вывода хода номер n (номер задается пользователем)
+            </p>
+            <hr>
+    
+            <hr>
+            <a href="../HW_3/game quest/quest.html" target="_blank"><button class="main__button">Выполнить код</button></a>
+        </section>
+
+        <section class="main__taskBlock">
+            <p class="main__smallDesc">
+                3. *На базе игры, созданной на уроке, реализовать игру «Кто хочет стать миллионером?»
+            </p>
+            <hr>
+    
+            <hr>
+            <a href="../HW_3/игра кто хочет стать миллионером/gameMillionare.html" target="_blank"><button class="main__button">Выполнить код</button></a>
+        </section>
+    </main>
+
+</body>
+
+</html>

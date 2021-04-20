@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #d5d3e8;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+
+.navbar {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__logo,
+.footerInfo__logo {
+    width: 30px;
+}
+
+.navbar__logo:hover {
+    filter: drop-shadow(0 0 3px rgba(30, 30, 102, 0.5));
+}
+
+.navbar__unit {
+    display: flex;
+    list-style-type: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.navbar__link {
+    text-decoration: none;
+}
+
+.navbar__link:not(:last-child) {
+    padding-right: 20px;
+}
+
+.navbar__list:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.navbar__list {
+    color: #4d284c;
+    transition: 0.5s;
+}
+
+
+/* стили для блока main*/
+
+.main {
+    padding: 16px;
+}
+
+.main__heading {
+    text-align: center;
+    padding-bottom: 8px;
+    font-size: 26px;
+    color: #1a1736;
+}
+
+.main__taskBlock {
+    padding: 20px;
+    border: 3px inset #6b8067;
+    margin-bottom: 8px;
+}
+
+.main__button {
+    padding: 8px;
+    border: none;
+    color: white;
+    background-color: #374652;
+    border-radius: 8px;
+    margin-top: 16px;
+    display: flex;
+    cursor: pointer;
+    outline: none;
+}
+
+.main__button:hover {
+    background-color: 
+    #472e35;
+}
+
+/* стили для футера*/
+
+.footer {
+    background-color: #4a476b;
+    margin-top: 16px;
+}
+
+.footerInfo {
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footerInfo__content {
+    color: #FFF0F8FF;
+}
+
+.footerInfo__logo:hover {
+    filter: drop-shadow(0 0 3px rgba(185, 185, 202, 0.5));
+}
