@@ -1,0 +1,36 @@
+table {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: beige;
+    color: black;
+   }
+td {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+tr:nth-child(even) td:nth-child(odd) {
+    background-color: chocolate;
+}
+tr:nth-child(odd) td:nth-child(even) {
+    background-color: chocolate;
+}
+tr:last-child td:nth-child(odd),
+tr:first-child td:nth-child(even){
+    background-color: white;
+}
+tr:nth-child(even) td:first-child{
+    background-color: white;
+}
+tr:nth-child(odd) td:last-child{
+    background-color: white;
+}
+
+tr:first-child td:nth-child(-n + 10){
+    transform: rotate(180deg);
+}
+td:last-child{
+    transform: rotate(180deg);
+}
